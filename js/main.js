@@ -14,6 +14,10 @@
         ctx.lineWidth = 8;
         ctx.lineJoin ='bevel';
         ctx.strokeRect(50,50,50,50);　//わくだけの四角
+
+        ctx.fillStyle ='#ddd';  //スタイルはそれ以降の描画すべてに適用される
+        ctx.fillRect(70,70,50,50);
+        ctx.strokeRect(70,70,50,50);
     }
     draw();
     
