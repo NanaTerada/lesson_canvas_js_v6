@@ -7,17 +7,24 @@
             return;
         }
         const ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.moveTo(100,50);
+        ctx.lineTo(200,50);
+        ctx.setLineDash([5,10]); 
+        ctx.stroke();
 
-        ctx.beginPath();　//パスはじめる
-        ctx.moveTo(50,50);　//パスの始点を移動させる
-        ctx.lineTo(100,50);　//どこまで（どこに向かって？）線をひくか　（横,縦）
-        ctx.lineTo(100,100);　//もういっぽんひく
-        ctx.closePath(); //パスとじる line To　使ってもええけどこっちのが簡単にとじれる
-        ctx.stroke();　//線をひく
-        ctx.fill(); //中を塗りつぶす
+        ctx.beginPath();
+        ctx.moveTo(100,100);
+        ctx.lineTo(200,100);
+        ctx.setLineDash([]); //点線やめるには空の配列を渡さなきゃ
+        ctx.stroke();
 
-        
-  
+        ctx.beginPath();
+        ctx.moveTo(100,150);
+        ctx.lineTo(200,150);
+        ctx.lineWidth = 16 ;
+        ctx.lineCap = 'round'; //先端の形
+        ctx.stroke();
     }
     draw();
     
