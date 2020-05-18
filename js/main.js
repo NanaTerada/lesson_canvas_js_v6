@@ -8,9 +8,13 @@
         }
         const ctx = canvas.getContext('2d'); //ctx =　コンテクスト 絵筆のようなもの。。。？
         //ctx.fillRect(x,y,width,height); 
-        //ctx.fillRect(50,50,50,50); 塗りつぶされた四角
+        ctx.fillStyle ='pink';
+        ctx.fillRect(50,50,50,50); //塗りつぶされた四角
+        ctx.strokeStyle ='#f00';
+        ctx.lineWidth = 8;
+        ctx.lineJoin ='bevel';
         ctx.strokeRect(50,50,50,50);　//わくだけの四角
     }
-
     draw();
+    
 }
