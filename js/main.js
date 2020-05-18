@@ -7,24 +7,15 @@
             return;
         }
         const ctx = canvas.getContext('2d');
-        ctx.beginPath();
-        ctx.moveTo(100,50);
-        ctx.lineTo(200,50);
-        ctx.setLineDash([5,10]); 
-        ctx.stroke();
 
         ctx.beginPath();
-        ctx.moveTo(100,100);
-        ctx.lineTo(200,100);
-        ctx.setLineDash([]); //点線やめるには空の配列を渡さなきゃ
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.moveTo(100,150);
-        ctx.lineTo(200,150);
-        ctx.lineWidth = 16 ;
-        ctx.lineCap = 'round'; //先端の形
-        ctx.stroke();
+        //ctx.arc(x,y,r,start,end);
+        // ctx.arc(100,100,50,0, 300 /180 * Math.PI);
+        ctx.moveTo(100,100); //始点を円の中心にする
+        ctx.arc(100,100,50,0, 300 /180 * Math.PI,true);
+        //ctx.stroke();
+        ctx.fill();
+       
     }
     draw();
     
