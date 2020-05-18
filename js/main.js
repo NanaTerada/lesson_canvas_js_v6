@@ -8,14 +8,12 @@
         }
         const ctx = canvas.getContext('2d');
 
-        ctx.beginPath();
-        //ctx.arc(x,y,r,start,end);
-        // ctx.arc(100,100,50,0, 300 /180 * Math.PI);
-        ctx.moveTo(100,100); //始点を円の中心にする
-        ctx.arc(100,100,50,0, 300 /180 * Math.PI,true);
-        //ctx.stroke();
-        ctx.fill();
-       
+    //    ctx.ellipse(x,y,rx,ry,rotation,start,end);
+    //    ctx.ellipse(始点のx,y座標,それぞれの半径rx,ry,回転角度rotation,始点の角度start,終点の角度end);
+
+    //ctx.ellipse(100,100,50,30,0,0,2* Math.PI);
+    ctx.rect(50,50,50,50);
+    ctx.stroke();
     }
     draw();
     
