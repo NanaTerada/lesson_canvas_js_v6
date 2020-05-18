@@ -6,18 +6,17 @@
         if (typeof canvas.getContext === 'undefined') { //ブラウザがcanvasをサポートしていなかったら処理を終了
             return;
         }
-        const ctx = canvas.getContext('2d'); //ctx =　コンテクスト 絵筆のようなもの。。。？
-        //ctx.fillRect(x,y,width,height); 
-        ctx.fillStyle ='pink';
-        ctx.fillRect(50,50,50,50); //塗りつぶされた四角
-        ctx.strokeStyle ='#f00';
-        ctx.lineWidth = 8;
-        ctx.lineJoin ='bevel';
-        ctx.strokeRect(50,50,50,50);　//わくだけの四角
+        const ctx = canvas.getContext('2d');
+    //ctx.createLinearGradient(x0,y0,x1,x1);  
+    const g = ctx.createLinearGradient(0,0,canvas.width,0); //0　始点　1終点
 
-        ctx.fillStyle ='#ddd';  //スタイルはそれ以降の描画すべてに適用される
-        ctx.fillRect(70,70,50,50);
-        ctx.strokeRect(70,70,50,50);
+       g.addColorStop(0,'#f00');
+       g.addColorStop(0.3,'#0F0');
+       g.addColorStop(1,'#00F');
+
+       ctx.fillStyle =g;
+
+       ctx.fillRect(0,0,canvas.width,canvas.height);
     }
     draw();
     
