@@ -9,6 +9,6 @@
 JavaScriptで図形を描画することができるCanvasについて学んでいきます。
 
 ### URL
-https://github.com/NanaTerada/lesson_flex-box_css.git
+https://github.com/NanaTerada/lesson_canvas_js_v6.git
 
 ### メモ
