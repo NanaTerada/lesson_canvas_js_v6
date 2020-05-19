@@ -7,23 +7,30 @@
             return;
         }
         const ctx = canvas.getContext('2d');
-        
-        const img = document.createElement('img');
-        img.src ='img/sprite.png';
 
-        img.addEventListener('load', () =>{
-        //    ctx.drawImage(img,0,0);
-        ctx.drawImage(
-            img,
-            //切り出し元の画像のｘｙ座標　sx　sy 高さ　幅　sw sh
-            //描画する位置　dx　dy　dw dh　ディスティネーション
-            70 * 2, 70 ,70 , 70,
-            0,0,35,35
+        ctx.beginPath();
+        ctx.ellipse(100,100,40,30,0,0,2 * Math.PI);
+        ctx.fillStyle = 'black';
+        ctx.fill();
 
-        );
-        });
+        ctx.beginPath();
+        ctx.ellipse(80,100,8,8,0,0,2 * Math.PI);
+        ctx.ellipse(120,100,8,8,0,0,2 * Math.PI);
+        ctx.fillStyle = 'skyblue';
+        ctx.fill();
 
+        ctx.scale(0.5,0.5); //それ以降半分の位置に描画される
 
+        ctx.beginPath();
+        ctx.ellipse(100,100,40,30,0,0,2 * Math.PI);
+        ctx.fillStyle = 'black';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.ellipse(80,100,8,8,0,0,2 * Math.PI);
+        ctx.ellipse(120,100,8,8,0,0,2 * Math.PI);
+        ctx.fillStyle = 'skyblue';
+        ctx.fill();
     }
 
     draw();
