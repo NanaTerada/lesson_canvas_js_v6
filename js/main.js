@@ -7,21 +7,21 @@
             return;
         }
         const ctx = canvas.getContext('2d');
+        
+        const img = document.createElement('img');
+        img.src ='img/logo.png';
 
-    ctx.beginPath();
-    ctx.moveTo(0,100);
-    ctx.lineTo(canvas.width,100);
-    ctx.moveTo(100,0);
-    ctx.lineTo(100,canvas.height);
-    ctx.stroke();
+        img.addEventListener('load', () =>{
+            // ctx.drawImage(img,0,0);
+            //ctx.drawImage(img,0,0,40,40); サイズ設定できる
+            // const pattern = ctx.createPattern(img,'repeat');
+            // repeat-x 横方向のみ繰り返し repeat-y　縦方向のみ繰り返し
+            const pattern = ctx.createPattern(img,'repeat-y');
+            ctx.fillStyle = pattern;
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+        });
 
-    ctx.font = 'bold 64px Verdana';
-    ctx.textAlign = 'right';
-    ctx.textBaseline = 'top';
 
-    // ctx.fillText('Tokyo',100,100);
-    // ctx.fillText('Tokyo',100,100,100); 最大幅を設定できる
-    ctx.strokeText('Tokyo',100,100,100); //わくだけ
     }
 
     draw();
