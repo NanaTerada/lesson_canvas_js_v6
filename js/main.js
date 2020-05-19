@@ -9,16 +9,18 @@
         const ctx = canvas.getContext('2d');
         
         const img = document.createElement('img');
-        img.src ='img/logo.png';
+        img.src ='img/sprite.png';
 
         img.addEventListener('load', () =>{
-            // ctx.drawImage(img,0,0);
-            //ctx.drawImage(img,0,0,40,40); サイズ設定できる
-            // const pattern = ctx.createPattern(img,'repeat');
-            // repeat-x 横方向のみ繰り返し repeat-y　縦方向のみ繰り返し
-            const pattern = ctx.createPattern(img,'repeat-y');
-            ctx.fillStyle = pattern;
-            ctx.fillRect(0,0,canvas.width,canvas.height);
+        //    ctx.drawImage(img,0,0);
+        ctx.drawImage(
+            img,
+            //切り出し元の画像のｘｙ座標　sx　sy 高さ　幅　sw sh
+            //描画する位置　dx　dy　dw dh　ディスティネーション
+            70 * 2, 70 ,70 , 70,
+            0,0,35,35
+
+        );
         });
 
 
